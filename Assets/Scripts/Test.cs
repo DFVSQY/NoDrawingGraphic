@@ -17,10 +17,7 @@ public class Test : MonoBehaviour
     private void AddClick(GameObject go, UnityAction<GameObject> onClick)
     {
         EventTrigger et = go.GetComponent<EventTrigger>();
-        if(et == null)
-        {
-            et = go.AddComponent<EventTrigger>();
-        }
+        if(et == null) et = go.AddComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;
         entry.callback.AddListener((data) =>
